@@ -52,7 +52,7 @@ function check(event)
   
       return;
     }
-    $.post("http://localhost:8080/withdraw_api", // endpoint --
+    $.post("http://localhost:3000/withdraw_api", // endpoint --
       {
        amt,
        upi

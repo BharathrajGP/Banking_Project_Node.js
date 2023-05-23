@@ -29,7 +29,7 @@ function check(event)
       return;
     }
 
-    $.post("http://localhost:8080/deposit_api", // endpoint --
+    $.post("http://localhost:3000/deposit_api", // endpoint --
       {
        amt
       }, // data set as parameters --

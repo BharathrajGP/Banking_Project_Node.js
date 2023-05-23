@@ -58,7 +58,7 @@ function check(event) {
   let a = localStorage.setItem("data2", JSON.stringify(array));
 console.log(a);
 
-  $.post("http://localhost:8080/employee_api", // endpoint --
+  $.post("http://localhost:3000/employee_api", // endpoint --
     {
       e_id : e_id, 
       pass:pass,

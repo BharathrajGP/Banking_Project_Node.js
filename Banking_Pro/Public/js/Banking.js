@@ -16,7 +16,7 @@ function back()
 }
 function add()
 {
-    $.post("http://localhost:8080/name_extract_api", // endpoint --
+    $.post("http://localhost:3000/name_extract_api", // endpoint --
       {
 
       }, // data set as parameters --

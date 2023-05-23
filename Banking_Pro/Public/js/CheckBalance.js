@@ -55,7 +55,7 @@ function check(event)
   
       return;
     }
-    $.post("http://localhost:8080/check_api", // endpoint --
+    $.post("http://localhost:3000/check_api", // endpoint --
       {
         upi
       }, // data set as parameters --

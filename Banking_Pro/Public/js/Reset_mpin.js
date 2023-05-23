@@ -85,7 +85,7 @@ function check(event) {
 //   let a = localStorage.setItem("data1", JSON.stringify(array));
 // console.log(a);
 
-  $.post("http://localhost:8080/reset_mpin_api", // endpoint --
+  $.post("http://localhost:3000/reset_mpin_api", // endpoint --
     {
       c_id, 
       mpin,

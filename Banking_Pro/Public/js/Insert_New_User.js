@@ -1,7 +1,7 @@
 
 function emp()
 {
-  $.post("http://localhost:8080/emp_extract_api", // endpoint --
+  $.post("http://localhost:3000/emp_extract_api", // endpoint --
       {
 
       }, // data set as parameters --
@@ -242,7 +242,7 @@ if ($("#phno").val().length > 0)
   }
 
   console.log("Hiii");
-  $.post("http://localhost:8080/insert_customer_api",
+  $.post("http://localhost:3000/insert_customer_api",
   {
     c_id,
     name,

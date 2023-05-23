@@ -1,0 +1,389 @@
+*
+{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html
+{
+    scroll-behavior: smooth;
+}
+/*header Starts*/
+/*header Ends*/
+/*Navigation Starts*/
+.nav
+{
+    /* border: 2px solid black; */
+    position: sticky;
+    top: 0px;
+    z-index: 10000;
+    background-color:rgba(76, 0, 130, 0.996);
+    padding: 30px;
+}
+.nav .company-logo
+{
+    /* border: 2px solid red; */
+    font-size: 25px;
+    margin-left: 100px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+}
+.nav ul
+{
+    /* border: 2px solid yellow; */
+    display: inline;
+    margin-left: 70px;
+}
+.nav ul li
+{
+    display: inline;
+    margin-left: 40px;
+}
+.nav ul li a
+{
+    color: whitesmoke;
+    text-decoration: none;
+    transition: color .7s;
+}
+.nav ul li a:hover
+{
+    color: orangered;
+}
+.nav .nav-div-2
+{
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    top: 0;
+    right: 80px;
+    border: 2px solid black;
+    background-color: white;
+    width: 400px;
+}
+.nav .nav-div-2 div a
+{
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: indigo;
+}
+.nav .nav-div-2 div a i
+{
+    color: black;
+}
+.nav .nav-div-2 div a:hover
+{
+    text-decoration: underline;
+}
+/*Nav bar ends*/
+/*Banner Starts*/
+.ban-sec
+{
+    height: 660px;
+    align-items: center;
+    text-align: center;
+    padding: 300px;
+    /* border: 2px solid orange; */
+    background-size: 100% 100%;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNls6loA3prcpczl_3nON9UNGm0eVnlFBOTPZYhGSM0y9Atjvz);
+}
+.ban-sec div
+{
+    /* border: 2px solid red; */
+    transition: color 1s;
+}
+.ban-sec div h1
+{
+    color: whitesmoke;
+    font-size:60px;
+    font-weight: bold;
+}
+.ban-sec div p
+{
+    color: whitesmoke;
+    font-size: larger;
+}
+.ban-sec div h1:hover,.ban-sec div p:hover 
+{
+    color: orangered;
+}
+/*Banner Ends*/
+/*Product Starts*/
+.pro-sec
+{
+    margin-top: 70px;
+    /* border: 2px solid orange; */
+    text-align: center;
+    /* padding-top: 20px; */
+}
+.pro-sec h3
+{
+    margin-top: 20px;
+    font-size: 35px;
+}
+.pro-sec div
+{
+    margin-top: 20px;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.pro-sec  .div div
+{
+    border: 2px solid rgba(211, 211, 211, 0.493);
+    border-radius: 7px;
+    width: 300px;
+    height: 350px;
+    display: block;
+    overflow: hidden;
+    transition: transform .5s;
+}
+.pro-sec  .div div img
+{
+    width: 100%;
+    height: 70%;
+}
+.pro-sec .div div h5
+{
+    font-size: 16px;
+    height: 9%;
+    margin-top: 5px;
+}
+.pro-sec .div div p
+{
+    height: 4%;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+.pro-sec .div div a
+{
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+.pro-sec  .div div:hover
+{
+    box-shadow: 10px 10px 30px 5px grey;
+}
+.pro-sec .div div:hover h5
+{
+    color: orangered;
+}
+.pro-sec  .div div:hover img
+{
+    transform: scale(1.05);
+    transition: all 2s;
+}
+/*Product Ends*/
+/*Apply Starts*/
+.app-sec
+{
+    margin-top: 70px;
+    /* border: 2px solid orange; */
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.304);
+    padding-bottom: 70px;
+}
+.app-sec h3
+{
+    color: indigo;
+    font-size: 40px;
+}
+.app-sec .div
+{
+    margin-top: 50px;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.app-sec  .div div
+{
+    border: 2px solid rgba(211, 211, 211, 0.882);
+    width: 300px;
+    height: 400px;
+    display: block;
+    overflow: hidden;
+    transition: transform .5s;
+}
+.app-sec  .div div img
+{
+    width: 100%;
+    height: 70%;
+}
+.app-sec .div div h5
+{
+    font-size: 20px;
+    height: 9%;
+    margin-top: 5px;
+}
+.app-sec .div div p
+{
+    height: 4%;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+.app-sec .div div a
+{
+    background-color: purple;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+.app-sec .div div a:hover
+{
+    box-shadow: 5px 5px 15px 2px purple;
+}
+.app-sec  .div div:hover
+{
+    box-shadow: 10px 10px 30px 5px grey;
+}
+.app-sec .div div:hover h5
+{
+    color: orangered;
+}
+.app-sec  .div div:hover img
+{
+    transform: scale(1.05);
+    transition: all 2s;
+}
+/*Apply Ends*/
+/*Donation Starts*/
+.don-sec
+{
+    height: 320px;
+    margin-top: 70px;
+    /* border: 2px solid orange; */
+    text-align: center;
+}
+.don-sec h2
+{
+    margin-top: 20px;
+    color: purple;
+    font-weight: bold;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.don-sec p
+{
+    font-size: 18px;
+    padding-top: 5%;
+    text-align: center;
+    height: 200px;
+    /* border: 2px solid black; */
+}
+/*Donation Ends*/
+/*Footer starts*/
+.foot
+{
+    margin-top: 70px;
+    /* border: 2px solid black; */
+}
+.foot .foot-sec-1
+{
+    background-color:rgba(76, 0, 130, 0.612);
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: space-around;
+}
+.foot .foot-sec-1 div
+{
+    margin-top: 90px;
+    margin-bottom: 40px;
+    /* border: 2px solid orange; */
+    width: 300px;
+    height: 350px;
+}
+.foot .foot-sec-1 div ul
+{
+    padding-top: 20px;
+}
+.foot .foot-sec-1 div ul li
+{
+    list-style: none;
+    margin-bottom: 20px;
+}
+.foot .foot-sec-1 div ul li a
+{
+    padding-left: 10px;
+    padding-top: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+.foot .foot-sec-1 div ul li a:hover
+{
+    color: orangered;
+    text-decoration:underline;
+}
+.foot .foot-sec-2
+{
+    padding-top: 60px;
+    background-color: indigo;
+    /* border: 2px solid orange; */
+    height: 120px;
+    display: flex;
+}
+.foot .foot-sec-2 .contact
+{
+    margin-left: 100px;
+    /* border: 2px solid whitesmoke; */
+    margin-right: 100px;
+}
+.foot .foot-sec-2 .contact a
+{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 20px;
+}
+.foot .foot-sec-2 .icon
+{
+    /* border: 2px solid whitesmoke; */
+    margin-left: 750px;
+}
+.foot .foot-sec-2 .icon i
+{
+    margin-left: 20px;
+    color: whitesmoke;
+    border-radius: 50%;
+}
+.foot .foot-sec-2 .icon i:hover,.foot .foot-sec-2 .contact a:hover
+{
+    color: orangered;
+}
+/*Footer Ends*/
+/*Scroll arrow Starts*/
+.scroll-Arrow
+{
+    background-color: red;
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    text-align: center;
+    /* z-index: -1000; */
+}
+.scroll-Arrow a
+{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+/*Scroll Arrow ends*/
+
+div a:hover
+{
+    text-decoration : underline;
+    cursor: pointer;
+}

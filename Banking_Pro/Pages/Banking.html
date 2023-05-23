@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/Banking.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Bank</title>
+</head>
+<body onload="add()">
+    <!--Header Starts-->
+    <header>
+        <div>
+            <div>
+            </div>
+        </div>
+    </header>
+    <!--Header Ends-->
+    <!--Nav Bar starts-->
+    <nav class="nav">
+        <div>
+            <a href="" class="company-logo"><i class="fa fa-university" aria-hidden="true" style="color: orangered;"></i>BANK OF MYSORE</a>
+        <ul style="padding-left: 00px;">
+            <li><a onclick="withdraw()">WITHDRAWAL</a></li>
+            <li><a onclick="deposit()">DEPOSIT</a></li>
+            <li><a onclick="checkbal()">CHECK BALANCE</a></li>
+            <li><a href="">TRANSACTION</a></li>
+            <li><a onclick="back()">LOG OUT</a></li>
+            <!-- <li><a href="">NEW USER SIGN UP</a></li>
+            <li><a href="./login.html">LOGIN</a></li> -->
+        </ul>
+        </div>
+        <div class="nav-div-2">
+            <div>
+                <a href=""><i class="fa fa-search" aria-hidden="true"></i>Search</a>
+                <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i>Locate (ATM & Bank)</a>
+                <a href=""><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!--Nav Bar Ends-->
+
+    <!--Banner Starts-->
+    <section class="ban-sec" style="height: 800px;">
+        <div>
+            <h1 id="inserting"></h1>
+            <h1>Welcome To Bank Of Mysore</h1>
+            <p>Feel Like Your Wallet</p>
+            <h2 style="color:yellowgreen; font-style: italic;">Go through with your further transaction</h2>
+        </div>
+    </section>
+    <!--Banner Ends-->
+    <script src="js/Banking.js"></script>
+</body>
+</html>

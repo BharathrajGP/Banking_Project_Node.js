@@ -49,6 +49,7 @@ app.post("/post_api", (req, res) => {
     id:req.body.c_id
   })
   console.log(req.body); 
+  let z="Select state from customer_details where CustomerID= '" + req.body.c_id + "';";
   let a = "select * from customer_login where CustomerID= '" + req.body.c_id + "';";
   con.query(a, function (err, result) {
     if (err)
@@ -57,24 +58,42 @@ app.post("/post_api", (req, res) => {
     } 
     else 
     {
-      console.log(result);
-      console.log(tid);
-      console.log(tid[0].id);
-      if(result.length==0)
+      con.query(z,(errs,results)=>
       {
-        res.status(400).json({ MSG: "No data" });
-      }
-      else
-      {
-        if(result[0].mpin==req.body.mpin)
-        {
-          res.status(200).json({ MSG: "received" });
-        }
+        if(errs) throw errs;
         else
         {
-          res.status(400).json({ MSG: "wrong mpin" });
+          console.log(results[0].state);
+          console.log(results[0].state=='A');
+          console.log(results[0].state==='A');
+          if(results[0].state=='A')
+          {
+            console.log(result);
+            console.log(tid);
+            console.log(tid[0].id);
+            if(result.length==0)
+            {
+              res.status(400).json({ MSG: "No data" });
+            }
+            else
+            {
+              if(result[0].mpin==req.body.mpin)
+              {
+                res.status(200).json({ MSG: "received" });
+              }
+              else
+              {
+                res.status(400).json({ MSG: "wrong mpin" });
+              }
+            }
+          }
+          else
+          {
+            res.status(402).json({ MSG: "deleted" });
+          }
         }
-      }
+      })
+      
     }
   }
   );
@@ -426,11 +445,143 @@ app.post("/employee_api", (req, res) => {
   });
 });
 
-//Employee Extract
+//Customer delete
+let eid1=[];
+app.get("/del", function (req, res) {
+  res.render(__dirname + "/pages/Delete_Customer.html");
+});
+app.post("/delete_api", (req, res) => {
+  console.log("Delete POST API");
+  eid1=[];
+  console.log(req.body); 
+  eid1.push({
+    id:req.body.e_id
+  })
+  let a = "select * from employee_table where E_Id= '" + req.body.e_id +"';";
+  console.log(a);
+  con.query(a, function (err, result) {
+    if (err)
+    {
+      throw err;
+    } 
+    else 
+    {
+      console.log(result);
+      console.log(result[0].Password);
+      console.log(req.body.pass);
+      console.log(result[0].Password==req.body.pass);
+      if(result.length==0)
+      {
+        res.status(400).json({ MSG: "invalid credentials" });
+      }
+      else
+      {
+        if(result[0].Password==req.body.pass)
+        {
+          res.status(200).json({MSG:result});
+        }
+        else
+        {
+          res.status(400).json({ MSG: "invalid credentials" });
+        }
+      }
+    }
+  });
+})
+
+app.get("/removeuser", function (req, res) {
+  res.render(__dirname + "/pages/Remove_Customer.html");
+});
+app.post("/remove_customer_api", (req, res) => {
+  console.log("Remove Customer POST API");
+  let a="select * from customer_login where CustomerId= '" + req.body.c_id + "';";
+  console.log(a);
+  let date=new Date();
+  console.log(date.getDay());
+  console.log(date.getUTCDate());
+  var dd=date.getDate();
+  var mm=date.getMonth()+1;
+  var yy=date.getFullYear();
+  var date1=yy+'-'+mm+'-'+dd;
+  console.log(date1);
+  con.query(a,(err,result)=>
+  {
+    if(err) throw err;
+    else
+    {
+      if(result.length>0)
+      {
+          let b="select * from customer_details where CustomerId= '" + req.body.c_id + "';";
+          console.log(b);
+          con.query(b,(err1,result1)=>{
+            if(err1) throw err1;
+            else
+            {
+              console.log(result1);
+              console.log(req.body);
+              if(result1[0].State=='A')
+              {
+                console.log("State Pass");
+                if(result[0].Account_Number==req.body.ac)
+                {
+                  console.log("ACC");
+                  if(result1[0].Name==req.body.name)
+                  {
+                    console.log("Name");
+                    if(result1[0].PhNo==req.body.phno)
+                    {
+                      console.log("Phno");
+                      let c="update customer_details set State='D',Modified_on='"+date1+"' where CustomerId= '" + req.body.c_id + "';";
+                      console.log(c);
+                      con.query(c,(err2,result2)=>
+                      {
+                        if(err2) throw err2;
+                        else
+                        {
+                          console.log(result2);
+                          res.status(200).json({MSG:"Deleted"})
+                        }
+                      })
+                    }
+                    else
+                    {
+                      res.status(404).json({MSG:"Phone Number is Not Matching"})
+                    }
+                  }
+                  else
+                  {
+                    res.status(403).json({MSG:"Name is Not Matching"})
+                  }
+                }
+                else
+                {
+                  res.status(402).json({MSG:"Account No. is Not Matching"})
+                }
+              }
+              else
+              {
+                res.status(401).json({MSG:"User is Already Deleted"})
+              }
+            }
+          })
+      }
+      else
+      {
+        res.status(400).json({MSG:"Data is Not found"})
+      }
+    }
+  }
+  );
+});
+
+
+
+//Employee Extract for Adding
 app.post("/emp_extract_api", (req, res) => {
-  console.log("Name Extract POST API");
+  console.log("Name Extract for Adding POST API");
   console.log(req.body); 
   let a = "select Name from employee_table where E_Id= '" + eid[0].id + "';";
+  console.log(a);
   con.query(a, function (err, result) {
     if (err)
     {
@@ -441,6 +592,37 @@ app.post("/emp_extract_api", (req, res) => {
       console.log(result);
       console.log(eid);
       console.log(eid[0].id);
+      if(result.length==0)
+      {
+        res.status(400).json({ MSG: "No data" });
+      }
+      else
+      {
+          res.status(200).json({ MSG: result });
+      }
+    }
+  }
+  );
+});
+
+
+
+//Employee Extract for Delete
+app.post("/emp_extract1_api", (req, res) => {
+  console.log("Name Extract for delete POST API");
+  console.log(req.body); 
+  let a = "select Name from employee_table where E_Id= '" + eid1[0].id + "';";
+  console.log(a);
+  con.query(a, function (err, result) {
+    if (err)
+    {
+      throw err;
+    } 
+    else 
+    {
+      console.log(result);
+      console.log(eid1);
+      console.log(eid1[0].id);
       if(result.length==0)
       {
         res.status(400).json({ MSG: "No data" });

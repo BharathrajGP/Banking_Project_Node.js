@@ -78,6 +78,10 @@ console.log(a);
     {
      alert("Invalid Credentials");
     }
+    else if(xhr.status==402)
+    {
+     alert("Customer details is already deleted");
+    }
     else
     {
       console.log("Hey yeah");
@@ -93,4 +97,9 @@ function forget()
 function newuser()
 {
   window.location="/emp";
+}
+
+function deleteuser()
+{
+  window.location="/del";
 }

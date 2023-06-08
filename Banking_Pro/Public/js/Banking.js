@@ -14,6 +14,10 @@ function back()
 {
     window.location="/login"
 }
+function update()
+{
+  window.location="/edit";
+}
 function add()
 {
     $.post("http://localhost:3000/name_extract_api", // endpoint --

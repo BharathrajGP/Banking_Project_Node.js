@@ -18,12 +18,14 @@
     </style>
 </head>
 <body style=" padding-top: 150px;">
-    <form class="form" id="naanu" style="background-color: rgba(255, 255, 255, 0.637);">
+    <form class="form" id="naanu" style="background-color: rgba(255, 255, 255, 0.637);" onload="logOut()">
         <!-- <p class="para">Rhibhus login page</p> -->
         <h3 class="para">Login in to your bank account</h3>
         <section class="sec">
             <div class="b" ><input type="number" placeholder="Customer Id" id="c_id"></div>
             <div class="c"><input type="password" placeholder="mpin" id="mpin"></div>
+            <div><input type="checkbox" id="showPassword" />
+                <label for="showPassword">Show mpin</label></div>
             <div class="d"><button type="Submit">Log In</button></div>
             <div class="e"><a onclick="forget()">forgot mpin?</a>
             <a onclick="newuser()">Sign up for new customer</a></div>

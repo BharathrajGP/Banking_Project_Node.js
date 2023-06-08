@@ -81,3 +81,14 @@ console.log(a);
     }
   });
 }
+
+
+document.getElementById('showPassword').onclick = function()
+      {
+        if ( this.checked ) {
+          document.getElementById('pass').type = "text";
+        } 
+        else {
+          document.getElementById('pass').type = "Password";
+        }
+      };

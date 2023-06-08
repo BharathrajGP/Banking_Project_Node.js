@@ -26,6 +26,16 @@
 //     // });
 // }
 
+
+document.getElementById('showPassword').onclick = function()
+      {
+        if ( this.checked ) {
+          document.getElementById('upi').type = "text";
+        } else {
+          document.getElementById('upi').type = "Password";
+        }
+      };
+
 let abc = document.getElementById(`naanu`);
 abc.addEventListener(`submit`, check);
 function check(event) 

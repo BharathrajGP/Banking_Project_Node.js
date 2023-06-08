@@ -113,3 +113,12 @@ function check(event) {
     }
   });
 }
+
+document.getElementById('showPassword').onclick = function()
+      {
+        if ( this.checked ) {
+          document.getElementById('mpin').type = "text";
+        } else {
+          document.getElementById('mpin').type = "Password";
+        }
+      };

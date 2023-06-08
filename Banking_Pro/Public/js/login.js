@@ -1,3 +1,18 @@
+function logOut() {
+  window.close = function () { 
+      window.open('http://localhost:3000/login', '_blank'); 
+  };
+}
+
+document.getElementById('showPassword').onclick = function()
+      {
+        if ( this.checked ) {
+          document.getElementById('mpin').type = "text";
+        } else {
+          document.getElementById('mpin').type = "Password";
+        }
+      };
+
 let abc = document.getElementById(`naanu`);
 abc.addEventListener(`submit`, check);
 

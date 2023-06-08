@@ -84,3 +84,12 @@ function check(event)
   {
     window.location="/banking"
   }
+
+  document.getElementById('showPassword').onclick = function()
+      {
+        if ( this.checked ) {
+          document.getElementById('upi').type = "text";
+        } else {
+          document.getElementById('upi').type = "Password";
+        }
+      };

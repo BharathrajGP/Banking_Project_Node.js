@@ -118,3 +118,11 @@ function deleteuser()
 {
   window.location="/del";
 }
+
+
+
+
+
+
+
+
